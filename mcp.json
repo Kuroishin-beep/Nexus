@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "nexus": {
+      "command": "python",
+      "args": ["-m", "src.mcp.server"],
+      "env": {
+        "ANTHROPIC_API_KEY": "${ANTHROPIC_API_KEY}",
+        "APP_ENV": "development"
+      },
+      "description": "Nexus MCP server — exposes web_search, code_exec, file_read/write/list tools."
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/tmp/agent_workspace"],
+      "description": "Official MCP filesystem server scoped to the agent workspace."
+    }
+  }
+}
